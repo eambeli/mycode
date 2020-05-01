@@ -1,0 +1,17 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: webby-test
+spec:
+  selector:
+    matchLabels:
+      app: webby-test
+  template:
+    metadata:
+      labels:
+        app: webby-test
+    spec:
+      containers:
+      - image: 127.0.0.1:30500/alta3/webby_test
+        name: webby-test
